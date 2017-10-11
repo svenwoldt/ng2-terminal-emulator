@@ -1,0 +1,35 @@
+<section class='terminal'
+         on-mouseover="mouseover()"
+         on-mouseleave="mouseleave()"
+         #terminal
+         id="terminal"
+         on-paste='handlePaste($event)'>
+    <div class='terminal-viewport'
+         #terminalViewport
+         id="terminalViewport"
+         on-click="clickHandler()"
+         slimScroll [options]="scrollOpts">
+        <div class='terminal-results'
+             #terminalResults
+             id="terminalResults">
+        </div>
+        <span class='terminal-prompt'
+              (ngShow)='showPrompt'>
+            {{ prompt.text }}
+        </span>
+        <span class='terminal-input'>
+            {{commandLine}}
+        </span>
+        <span class='terminal-cursor'>
+          {{ terminalCursor }}
+        </span>
+        <input type='text' class='terminal-target'
+               [(ngModel)]='commandLine'
+                (blur)="blur()"
+                (focus)="focus()"
+                on-keydown="keydown($event)"
+                on-keypress="key($event)"
+                 #terminalTarget
+                 id="terminalTarget"/>
+    </div>
+</section>

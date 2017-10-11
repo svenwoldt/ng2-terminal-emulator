@@ -1,0 +1,71 @@
+.terminal-line{
+    margin:0;
+    padding:0;
+    white-space:pre-wrap;
+    background-color:transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.terminal {
+    background-color:#000;
+    height: 500px;
+    color: #F6F6FF;
+    font-family: monospace;
+    overflow-x: hidden;
+    overflow-y:hidden;
+    font-size: 12px;
+    position:relative;
+    border:none;
+    border-radius: 20px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, .8);
+    box-shadow: 0 0 20px rgba(217, 215, 255, 0.85) inset, 2px 2px 16px #000;
+    transition: linear box-shadow .2s;
+    padding:0;
+}
+
+.terminal-focused.terminal{
+  box-shadow: 0 0 20px rgba(217, 215, 255, 0.85) inset, 0px 0px 2px #000, 0px 0px 16px rgba(0, 175, 22, 0.84);
+  border:none;
+}
+
+.terminal-target{
+    vertical-align:bottom;
+    opacity:0;
+    color:transparent;
+    height:1px;
+    width:1px;
+}
+
+.terminal-viewport {
+    overflow-x: hidden;
+    padding:0;
+    height: 94%;
+    margin: 15px 20px;
+    overflow-y: hidden;
+}
+
+.terminal-cursor{
+    visibility:visible;
+}
+.terminal-cursor-hidden{
+    /*visibility:hidden;*/
+  display: none !important;
+}
+.terminal-input{
+    overflow-wrap:break-word;
+}
+.terminal-result-line-server{
+    margin-left:10px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .terminal{
+    margin-top:5px;
+    height:360px;
+  }
+
+  .terminal-line{
+    white-space:normal;
+  }
+}
